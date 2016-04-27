@@ -67,15 +67,35 @@ class HomeController extends Controller
     return view('master.country')->with($s);
   }
 
+  public function view_language()
+  	{
+  		$s['data'] = \App\lang::all();
+  		return view('master.language')->with($s);
+  	}
 
-  // /**
-  //  * Show the application dashboard to the user.
-  //  *
-  //  * @return Response
-  //  */
-  // public function index()
-  // {
-  // 	return view('home');
-  // }
 
+	public function get_Language()
+	{
+		$api = new API;
+		$hasil = $api->getCurl('general_api/listLanguage');
+
+
+		\App\lang::whereRaw('id<>0')->delete();
+		$data = array();
+		foreach ($hasil->result as $key) {
+			# code...
+			$lang = new \App\lang;
+			$lang->code = $key->code;
+			$lang->name_short = $key->name_short;
+			$lang->name_long = $key->name_long;
+			$lang->save();
+			$data['id'][$lang->id]=$key->code;
+		}
+		echo json_encode(
+				array(
+					'status_code'=>200,
+					'inserted_data'=>sizeof($data['id'])
+				)
+		);
+	}
   }

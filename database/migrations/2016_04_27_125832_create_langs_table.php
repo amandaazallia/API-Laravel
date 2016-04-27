@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableLang extends Migration
+class CreateLangsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,13 @@ class CreateTableLang extends Migration
      */
     public function up()
     {
-        Schema::create('Langs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+      Schema::create('langs', function(Blueprint $table)
+        {
+          $table->increments('id');
+          $table->string('code');
+          $table->string('name_short');
+          $table->string('name_long');
+          $table->timestamps();
         });
     }
 
@@ -25,6 +29,6 @@ class CreateTableLang extends Migration
      */
     public function down()
     {
-        Schema::drop('Langs');
+      Schema::drop('langs');
     }
 }
