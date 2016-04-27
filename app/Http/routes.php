@@ -13,16 +13,27 @@
 //
 Route::get('/', 'WelcomeController@index');
 Route::auth();
-
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('master/currency', 'HomeController@view_Currency');
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+	]);
+
+Route::get('master/currency','HomeController@view_Currency');
 
 Route::get('cronGetCurrency','HomeController@get_Currency');
 
-Route::get('master/language', 'HomeController@view_language');
+Route::get('master/language','HomeController@view_Language');
+
+Route::get('cronGetLanguage','HomeController@get_Language');
+
+Route::get('master/country','HomeController@view_country');
+
+Route::get('cronGetCountry','HomeController@get_country');
+
 
 // Route::get
 //
