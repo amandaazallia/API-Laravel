@@ -24,4 +24,3 @@
 	</tbody>
 </table>
 @endsection
-Status API Training Shop Blog About
