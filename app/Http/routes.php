@@ -10,8 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//
 Route::get('/', 'WelcomeController@index');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
 
 Route::get('home', 'HomeController@index');
 
@@ -21,7 +24,7 @@ Route::get('cronGetCurrency','HomeController@get_Currency');
 
 Route::get('master/language', 'HomeController@view_language');
 
-Route::get
+// Route::get
 //
 // Route::get('/', function () {
 //     return view('welcome');
