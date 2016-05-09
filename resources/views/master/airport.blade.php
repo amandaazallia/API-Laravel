@@ -2,24 +2,22 @@
 
 @section('content')
 
-<h4>Country</h4>
+<h4>Airport</h4>
 
 <table>
 	<thead>
 		<tr>
-
-			<th>Name</th>
-			<th>Code</th>
+			<th>Airport Name</th>
+			<th>Location</th>
+			<th>Country</th>
 		</tr>
 	</thead>
 	<tbody>
 		@endforeach($data as $key)
 		<tr>
-
-			<td>{{ $key->name }}</td>
 			<td>{{ $key->code }}</td>
+			<td>{{ $key->country_name }}</td>
+			<td>{{ $key->country_areacode }}</td>
 		</tr>
 	</tbody>
 </table>
-
-@endsection

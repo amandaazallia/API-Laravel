@@ -56,6 +56,36 @@ class HomeController extends Controller
       );
   }
 
+  public function get_airport()
+  {
+    $api = new API;
+    $hasil = $api->getCurl('flight_api/all_airport');
+    \App\airport::whereRaw('id>0')->delete();
+    $data = array();
+    foreach ($hasil->all_airport->airport as $key ) {
+      $arp = new \App\airport;
+
+      $arp->airport_name= $key->airport_name;
+      $arp->airport_code = $key->airport_code;
+      $arp->location_name = $key->location_name;
+      $arp->country_id = $key->country_id;
+      $arp->save();
+
+      $data['id'][$arp->id]=$key->country_id;
+    }
+    echo json_encode(
+        array(
+          'status_code'=>200,
+          'inserted_data'=>sizeof($data['id'])
+          )
+      );
+  }
+  public function view_airport()
+  {
+    $s['data'] = \App\airport::all();
+    return view('master.airport')->with($s);
+  }
+
   public function view_Currency()
   {
     $s['data'] = \App\currency::all();

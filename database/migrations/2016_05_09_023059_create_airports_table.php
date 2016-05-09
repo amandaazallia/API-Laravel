@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLangsTable extends Migration
+class CreateAirportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateLangsTable extends Migration
      */
     public function up()
     {
-      Schema::create('langs', function(Blueprint $table)
-        {
+        Schema::create('airports', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('code');
-          $table->string('name_short');
-          $table->string('name_long');
+          $table->string('airport_name');
+          $table->string('airport_code');
+          $table->string('location_name');
+          $table->string('country_id');
           $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateLangsTable extends Migration
      */
     public function down()
     {
-      Schema::drop('langs');
+        Schema::drop('airports');
     }
 }
