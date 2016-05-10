@@ -25,7 +25,7 @@ Route::controllers([
 Route::get('master/currency','HomeController@view_Currency');
 
 Route::get('cronGetCurrency','HomeController@get_Currency');
-// 
+//
 // Route::get('master/currency','HomeController@view_airport');
 
 Route::get('cronGetairport','HomeController@get_airport');
@@ -38,7 +38,8 @@ Route::get('master/country','HomeController@view_country');
 
 Route::get('cronGetCountry','HomeController@get_country');
 
-
+Route::get('airline/flight',['as'=>'airline_flight',
+															'uses'=>'Reservasi@flight']);
 // Route::get
 //
 // Route::get('/', function () {
