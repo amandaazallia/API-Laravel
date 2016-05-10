@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app_flight')
 
 @section('content')
 

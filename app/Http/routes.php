@@ -26,13 +26,13 @@ Route::get('master/currency','HomeController@view_Currency');
 
 Route::get('cronGetCurrency','HomeController@get_Currency');
 //
-// Route::get('master/currency','HomeController@view_airport');
+Route::get('master/airport','HomeController@view_airport');
 
 Route::get('cronGetairport','HomeController@get_airport');
 
-Route::get('master/language','HomeController@view_Language');
+Route::get('master/language','HomeController@view_Lang');
 
-Route::get('cronGetLanguage','HomeController@get_Language');
+Route::get('cronGetLang','HomeController@get_Lang');
 
 Route::get('master/country','HomeController@view_country');
 

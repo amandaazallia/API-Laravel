@@ -97,20 +97,20 @@ class HomeController extends Controller
     return view('master.country')->with($s);
   }
 
-  public function view_language()
+  public function view_Lang()
   	{
-  		$s['data'] = \App\lang::all();
+  		$s['data'] = \App\Lang::all();
   		return view('master.language')->with($s);
   	}
 
 
-	public function get_Language()
+	public function get_Lang()
 	{
 		$api = new API;
 		$hasil = $api->getCurl('general_api/listLanguage');
 
 
-		\App\lang::whereRaw('id<>0')->delete();
+		\App\Lang::whereRaw('id<>0')->delete();
 		$data = array();
 		foreach ($hasil->result as $key) {
 			# code...
