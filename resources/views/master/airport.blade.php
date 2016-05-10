@@ -15,9 +15,9 @@
 	<tbody>
 		@foreach($data as $key)
 		<tr>
-			<td>{{ $key->code }}</td>
-			<td>{{ $key->country_name }}</td>
-			<td>{{ $key->country_areacode }}</td>
+			<td>{{ $key->airport_name }}</td>
+			<td>{{ $key->location_name }}</td>
+			<td>{{ $key->country_id }}</td>
 		</tr>
 		@endforeach
 	</tbody>
