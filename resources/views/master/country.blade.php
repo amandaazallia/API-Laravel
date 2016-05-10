@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app_flight')
 
 @section('content')
 
@@ -13,12 +13,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		@endforeach($data as $key)
+		@foreach($data as $key)
 		<tr>
 			<td>{{ $key->country_id }}</td>
 			<td>{{ $key->country_name }}</td>
 			<td>{{ $key->country_areacode }}</td>
 		</tr>
+		@endforeach
 	</tbody>
 </table>
 

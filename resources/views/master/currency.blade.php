@@ -1,8 +1,8 @@
-@extends('app')
+@extends('app_flight')
 
 @section('content')
 
-<h4>Country</h4>
+<h4>Currency</h4>
 
 <table>
 	<thead>
@@ -13,12 +13,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		@endforeach($data as $key)
+		@foreach($data as $key)
 		<tr>
 
 			<td>{{ $key->name }}</td>
 			<td>{{ $key->code }}</td>
 		</tr>
+		@endforeach
 	</tbody>
 </table>
 
