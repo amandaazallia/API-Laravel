@@ -62,7 +62,7 @@
 				</select>
 			</div>
 			<div class="col s3">
-				<span class="btn">Search</span>
+				<span class="btn" onclick="search()">Search</span>
 
 			</div>
 
@@ -72,7 +72,7 @@
 
 	</div>
 </div>
-
+<div id="result"></div>
 @endsection
 @section('footer')
 <script type="text/javascript">
@@ -87,5 +87,54 @@
 		}
 	}
 	check_type();
+
+	function search(){
+		$.ajax({
+			url:'{{route("ajax_search_flight")}}',
+			type:'POST',
+			data:{
+				from:$("#form").val(),
+				to:$("#to").val(),
+				type:$("#type").val(),
+				depart_date:$("#depart_date").val(),
+				return_date:$("#return_date").val(),
+				adult:$("#adult").val(),
+				child:$("#child").val(),
+				infant:$("#infant").val(),
+				_token:'{{csrf_token()}}'
+		},
+			success:function(data){
+				var hasil_depart = data.departures;
+
+				var res_depart = hasil_depart.result;
+				var html = '<ul class="collapsible popout">';
+				for (data in res_depart(){
+					html += '<li>';
+					html += '<div class="collapsible-header">';
+					html += res_depart[data].airlines_name;
+
+					html += '</div>';
+					html += '<div class="collapsible-body">';
+
+					var flights = res_depart[data].flight_infos;
+					var fligh_infos = flights.flight.infos;
+					for(info in res_depart){
+						html += '<h4>'+flight_infos[info].flight_number+'</h4>';
+						html += '<div class="">';
+						html += flight_infos[info].departure_city+' at'+flight_infos[info].simple_departure_time;
+						html += '</div>';
+						html += '<div class="pull-right">';
+						html += flight_infos[info].arrival_city_' at';
+									+flight_infos[info].simple_arrival_time;
+						html += '</div>';
+						html += '<hr>';
+					}
+					html += '</div>';
+					html += '</li>';
+								})
+				$("#result").html(data);
+			}
+		});
+	}
 </script>
 @endsection

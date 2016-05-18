@@ -40,9 +40,6 @@ Route::get('cronGetCountry','HomeController@get_country');
 
 Route::get('airline/flight',['as'=>'airline_flight',
 															'uses'=>'Reservasi@flight']);
-// Route::get
-//
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('getCurrency')
+
+Route::post('airline/flight/search',['as'=>'ajax_search_flight',
+																				'uses'=>'Reservasi@searchflight']);

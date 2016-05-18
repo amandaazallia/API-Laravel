@@ -27,7 +27,7 @@ class APIController {
                 'output'=>'json')
               );
     if ($curl->error) {
-      print_r($curl);
+      //print_r($curl);
       \Session::put('token','');
       die("Error:".$curl->error_code);
 
