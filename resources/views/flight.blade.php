@@ -75,6 +75,7 @@
 <div id="result"></div>
 @endsection
 @section('footer')
+
 <script type="text/javascript">
 	$(".for_date").datepicker();
 
