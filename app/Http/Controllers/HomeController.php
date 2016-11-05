@@ -8,10 +8,13 @@ use App\Http\Controllers\TiketAPI\APIController as API;
 
 use App\Http\Requests;
 
-// use App\currency;
 
 class HomeController extends Controller
 {
+  public function index()
+  {
+    return redirect('master/currency');
+  }
 
   public function get_Currency()
   {
@@ -20,7 +23,7 @@ class HomeController extends Controller
     \App\currency::whereRaw('id>0')->delete();
     $data = array();
     foreach ($hasil->result as $key ) {
-      $curr = new \App\currency;
+      $curr = new Currency;
       $curr->code = $key->code;
       $curr->name = $key->name;
       $curr->save();

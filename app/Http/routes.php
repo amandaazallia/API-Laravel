@@ -11,16 +11,7 @@
 |
 */
 //
-Route::get('/', 'WelcomeController@index');
-Route::auth();
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-	]);
+Route::get('/', 'HomeController@index');
 
 Route::get('master/currency','HomeController@view_Currency');
 
