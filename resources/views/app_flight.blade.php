@@ -14,7 +14,7 @@
 
         <nav>
           <div class="nav-wrapper">
-            <a href="{{ url('/') }}" class="brand-logo left">Logo </a>
+            <a href="{{ url('/') }}" class="brand-logo left">API-ticket.com </a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{ url('master/currency') }}">Currency</a></li>
               <li><a href="{{ url('master/country') }}">Country</a></li>
@@ -23,7 +23,7 @@
 
             </ul>
           </div>
-        </nav> 
+        </nav>
 
       <div class="container">
     @yield('content')

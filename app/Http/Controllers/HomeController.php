@@ -23,7 +23,7 @@ class HomeController extends Controller
     \App\currency::whereRaw('id>0')->delete();
     $data = array();
     foreach ($hasil->result as $key ) {
-      $curr = new Currency;
+      $curr = new \App\Currency;
       $curr->code = $key->code;
       $curr->name = $key->name;
       $curr->save();
