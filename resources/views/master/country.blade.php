@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h4>Country</h4>
+<center><h3 class="fonts">Country</h3></center>
 
-<table>
+<table class="striped"  style="margin:15px">
 	<thead>
 		<tr>
 			<th>Country ID</th>

@@ -2,9 +2,16 @@
 
 @section('content')
 
-<h4>Airport</h4>
+<center><h3 class="fonts">Airport</h3></center>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+		<a class="btn-floating btn-large waves-effect waves-light teal lighten-2" href="{{url('/airline/flight')}}">
+			<i class="material-icons">add</i>
+		</a>
+</div>
 
-<table>
+
+
+<table class="striped"  style="margin:15px">
 	<thead>
 		<tr>
 			<th>Airport Name</th>

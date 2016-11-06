@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="">
-<h1>Search Flight</h1>
+<center><h3 class="fonts">Search Flight</h3></center><br>
 	<div class="row">
 		<div class="col s12">
 		<div class="row">

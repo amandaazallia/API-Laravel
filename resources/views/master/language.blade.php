@@ -3,14 +3,14 @@
 @section('content')
 
 <center>
-<h4>Language</h4>
+<h3 class="fonts">Language</h3>
 </center>
-<table style="margin:15px">
+<table class="striped" style="margin:15px">
 	<thead>
 		<tr>
-			<td>Country ID</td>
-			<td>Country Name</td>
-			<td>Country AreaCode</td>
+			<th>Country ID</th>
+			<th>Country Name</th>
+			<th>Country AreaCode</th>
 		</tr>
 	</thead>
 	<tbody>
