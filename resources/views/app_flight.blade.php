@@ -7,6 +7,7 @@
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="{{ url('css/materialize.min.css') }} "  media="screen,projection"/>
+      <title>API-Laravel</title>
       <style media="screen">
         .fonts{
           font-family: 'Raleway', sans-serif;
